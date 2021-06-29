@@ -1,5 +1,6 @@
 /* variables */
 /* mixin */
+/* Set Text Color */
 /* Media Query Mixins */
 /* Menu Button */
 .menu-btn {
@@ -28,11 +29,12 @@
   position: fixed;
   top: 0;
   width: 100%;
+  opacity: 0.9;
   visibility: hidden;
   /* Brnding Side */ }
   .menu.show {
     visibility: visible; }
-  .menu-branding, .menu-nav {
+  .menu-branding {
     display: flex;
     flex-flow: column wrap;
     align-items: center;
@@ -41,8 +43,9 @@
     width: 50%;
     height: 100vh;
     overflow: hidden;
-    opacity: 0.9; }
+    opacity: 1; }
   .menu-nav {
+    opacity: 0.9;
     display: flex;
     flex-flow: column wrap;
     align-items: center;
@@ -68,7 +71,7 @@
     .menu-branding .portrait {
       width: 250px;
       height: 250px;
-      background: url("/dist/img/portrait-small.jpg");
+      background: url("/dist/img/portrait-big.jpg");
       background-position: center;
       background-size: cover;
       border-radius: 50%;
@@ -104,41 +107,6 @@
 
 .nav-item:nth-child(4) {
   transition-delay: 0.4s; }
-
-/* WideScreens */
-@media screen and (max-width: 768px) {
-  main {
-    align-items: center;
-    text-align: center; }
-    main .lg-heading {
-      line-height: 1;
-      margin-botton: 1rem; }
-  ul.menu-nav,
-  div.menu-branding {
-    float: none;
-    width: 100%;
-    min-height: 0; }
-    ul.menu-nav.show,
-    div.menu-branding.show {
-      transform: translate3d(0, 0, 0); }
-  .menu-nav {
-    height: 75vh;
-    transform: translate3d(-100%, 0, 0);
-    font-size: 24px; }
-  .menu-branding {
-    height: 25vh;
-    transform: translate3d(100%, 0, 0); }
-    .menu-branding .portrait {
-      background: url("/dist/img/portrait-small.jpg");
-      background-position: center;
-      background-size: cover;
-      border-radius: 50%;
-      width: 150px;
-      height: 150px; } }
-
-@media screen and (max-width: 500px) {
-  main#home h1 {
-    margin-top: 10vh; } }
 
 /* Universal */
 * {
@@ -184,6 +152,9 @@ a {
   color: #fff;
   text-decoration: none; }
 
+img {
+  width: 100%; }
+
 header {
   position: fixed;
   z-index: 2;
@@ -194,7 +165,7 @@ header {
 
 main {
   padding: 4rem;
-  height: 100%; }
+  min-height: calc(100vh - 25px); }
   main .icons {
     margin-top: 1rem; }
     main .icons a {
@@ -206,3 +177,77 @@ main {
     overflow: hidden; }
     main#home h1 {
       margin-top: 20vh; }
+
+/* About */
+.about-info {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas: 'bioimage bio bio' 'job1 job2 job3';
+  grid-template-columns: repeat(3, 1fr); }
+  .about-info .bio-image {
+    grid-area: bioimage;
+    margin: auto;
+    min-width: 300px;
+    min-height: 300px;
+    border-radius: 50%;
+    border: 3px solid #eece1a; }
+  .about-info .bio {
+    grid-area: bio;
+    font-size: 1.3rem; }
+  .about-info .job-1 {
+    grid-area: job1; }
+  .about-info .job-2 {
+    grid-area: job2; }
+  .about-info .job-3 {
+    grid-area: job3; }
+  .about-info .job {
+    background: #515151;
+    padding: 0.5rem;
+    border-bottom: 5px solid #eece1a; }
+
+/* Footer */
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: #2b2b2b;
+  color: #fff;
+  height: 25px; }
+
+/* Mobile initial at the bottom */
+/* WideScreens */
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center; }
+    main .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem; }
+  ul.menu-nav,
+  div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0; }
+    ul.menu-nav.show,
+    div.menu-branding.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-nav {
+    height: 75vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 24px; }
+  .menu-branding {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0); }
+    .menu-branding .portrait {
+      background: url("/dist/img/portrait-small.jpg");
+      background-position: center;
+      background-size: cover;
+      border-radius: 50%;
+      width: 150px;
+      height: 150px; }
+  .about-info {
+    grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
+    grid-template-columns: 1fr; } }
+
+@media screen and (max-width: 500px) {
+  main#home h1 {
+    margin-top: 10vh; } }

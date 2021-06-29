@@ -12,7 +12,7 @@
         width: 20px;
         height: 3px;
         margin: 0 0 5px 0;
-        background: #fff;
+        background: set-text-color($primary-color);
         @include easeOut;
     }
 
@@ -45,15 +45,14 @@
     position: fixed;
     top: 0;
     width: 100%;
-    // opacity: 0.9;
+    opacity: 0.9;
     visibility: hidden;
 
     &.show {
         visibility: visible;
     }
 
-    &-branding,
-    &-nav {
+    &-branding {
         display: flex;
         flex-flow: column wrap;
         align-items: center;
@@ -62,10 +61,11 @@
         width: 50%;
         height: 100vh;
         overflow: hidden;
-        opacity: 0.9;
+        opacity: 1;
     }
 
     &-nav {
+        opacity: 0.9;
         display: flex;
         flex-flow: column wrap;
         align-items: center;
@@ -101,7 +101,7 @@
         .portrait {
             width: 250px;
             height: 250px;
-            background: url('/dist/img/portrait-small.jpg');
+            background: url('/dist/img/portrait-big.jpg');
             background-position: center;
             background-size: cover;
             border-radius: 50%;
@@ -130,7 +130,7 @@
         text-transform: uppercase;
         padding: 1rem 0;
         font-weight: 300;
-        color: #fff;
+        color: set-text-color($primary-color);
         text-decoration: none;
         @include easeOut;
 

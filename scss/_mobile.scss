@@ -3,6 +3,13 @@
     .projects {
         grid-template-columns: repeat(4, 1fr);
     }
+
+
+    .boxes {
+
+            margin-bottom: 1.2rem;
+        }
+    }
     
 }
 
@@ -21,6 +28,15 @@
     .projects {
         grid-template-columns: repeat(3, 1fr);
     }
+
+    .boxes {
+
+        div {
+            width: 100%;
+            margin-bottom: 1.2rem;
+        }
+    }
+
 }
 
 // Tablets & Small Laptops
@@ -87,6 +103,14 @@
     .projects {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .boxes {
+
+        div {
+            width: 100%;
+            margin-bottom: 1.2rem;
+        }
+    }
 }
 
 // Smartphones
@@ -99,3 +123,4 @@
         grid-template-columns: 1fr;
     }
 }
+

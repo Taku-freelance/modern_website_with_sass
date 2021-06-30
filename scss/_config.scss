@@ -35,7 +35,7 @@ $background-opacity: 0.9;
     }
 }
 
-/* Set Text Color */
+/* Set Text Color  switch the color */
 // If the color is bright, if not black
 @function set-text-color($color) {
     @if (lightness($color) > 40) {
